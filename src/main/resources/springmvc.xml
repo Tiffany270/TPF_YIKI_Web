@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+
+    <!--此文件仅管理控制层：负责跳转的-->
+
+    <!-- 自动扫描的包 -->
+    <context:component-scan base-package="com.tpf.*"/>
+    <!-- 可以使用注解是注入 -->
+    <context:annotation-config/>
+
+    <mvc:annotation-driven/>
+    <!--正确处理静态资源-->
+    <mvc:default-servlet-handler/>
+
+    <!-- 配置视图解析器：如何把handler方法解析为实际物理视图
+    其实应该可以去掉/view/
+    返回字符应该自定义
+    -->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+            id="internalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <!-- 后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 配置视图解析器 ,使用视图的名字来解析视图,order可以定义视图优先级 -->
+    <bean
+            class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="100"/>
+    </bean>
+
+
+</beans>
