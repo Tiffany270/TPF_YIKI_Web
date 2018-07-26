@@ -18,7 +18,7 @@
 
 
     <!--这个文件是对mybatis，和数据源的整合
-    AutoWied可以自动注入mapper并且事务管理PersonMapper.xml
+    AutoWied可以自动注入mapper并且事务管理
     -->
 
     <!-- 自动扫描的包 -->

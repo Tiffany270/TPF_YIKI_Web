@@ -9,17 +9,13 @@
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
         <url-pattern>*.html</url-pattern>
+        <url-pattern>/ico/*"</url-pattern>
+        <url-pattern>/js/*"</url-pattern>
+        <url-pattern>/css/*</url-pattern>
+        <url-pattern>/font/*</url-pattern>
+        <url-pattern>/img/*</url-pattern>
     </servlet-mapping>
 
-    <!--Spring配置-->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring.xml</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
 
     <!--springmvc配置-->
     <servlet>
@@ -64,4 +60,13 @@
     </filter-mapping>
 
 
+    <!--Spring配置-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 </web-app>

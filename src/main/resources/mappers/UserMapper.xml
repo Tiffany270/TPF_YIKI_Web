@@ -10,6 +10,11 @@
         select * from user
     </select>
 
+    <select id="getUserById" resultType="com.tpf.Entity.User">
+
+        select * from user where uid=#{id}
+    </select>
+
 
 </mapper>
 

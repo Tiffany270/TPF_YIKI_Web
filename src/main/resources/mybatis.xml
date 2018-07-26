@@ -19,7 +19,7 @@
         <setting name="aggressiveLazyLoading" value="false"/>
 
         <!--配置二级缓存-->
-        <setting name="cacheEnabled" value="false"/>
+        <setting name="cacheEnabled" value="true"/>
     </settings>
 
 

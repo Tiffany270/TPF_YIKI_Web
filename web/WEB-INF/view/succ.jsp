@@ -12,9 +12,9 @@
     <title>跳转页面</title>
 
     <c:forEach items="${all}" var="pers">
-        ${pers.u_id}
-        ${pers.u_name}
-        ${pers.u_address}
+        ${pers.uaddress}
+        ${pers.uname}
+        ${pers.urealname}
 
     </c:forEach>
 

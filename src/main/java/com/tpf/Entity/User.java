@@ -1,82 +1,81 @@
 package com.tpf.Entity;
 
-public class User {
+import java.io.Serializable;
 
- private Integer u_id;
- private String u_name;
- private String u_realname;
- private String u_password;
- private String u_address;
- private String u_phone;
+public class User implements Serializable {
+
+ private int uid;
+ private String uname;
+ private String urealname;
+ private String upassword;
+ private String uaddress;
+ private String uphone;
 
  public User() {
  }
 
- public User(String u_name, String u_realname, String u_password, String u_address, String u_phone) {
-  this.u_name = u_name;
-  this.u_realname = u_realname;
-  this.u_password = u_password;
-  this.u_address = u_address;
-  this.u_phone = u_phone;
+ public User(int uid, String uname, String urealname, String upassword, String uaddress, String uphone) {
+  this.uid = uid;
+  this.uname = uname;
+  this.urealname = urealname;
+  this.upassword = upassword;
+  this.uaddress = uaddress;
+  this.uphone = uphone;
  }
 
- public Integer getU_id() {
-  return u_id;
+ public User(String uname, String urealname, String upassword, String uaddress, String uphone) {
+  this.uname = uname;
+  this.urealname = urealname;
+  this.upassword = upassword;
+  this.uaddress = uaddress;
+  this.uphone = uphone;
  }
 
- public void setU_id(Integer u_id) {
-  this.u_id = u_id;
+ public int getUid() {
+  return uid;
  }
 
- public String getU_name() {
-  return u_name;
+ public void setUid(int uid) {
+  this.uid = uid;
  }
 
- public void setU_name(String u_name) {
-  this.u_name = u_name;
+ public String getUname() {
+  return uname;
  }
 
- public String getU_realname() {
-  return u_realname;
+ public void setUname(String uname) {
+  this.uname = uname;
  }
 
- public void setU_realname(String u_realname) {
-  this.u_realname = u_realname;
+ public String getUrealname() {
+  return urealname;
  }
 
- public String getU_password() {
-  return u_password;
+ public void setUrealname(String urealname) {
+  this.urealname = urealname;
  }
 
- public void setU_password(String u_password) {
-  this.u_password = u_password;
+ public String getUpassword() {
+  return upassword;
  }
 
- public String getU_address() {
-  return u_address;
+ public void setUpassword(String upassword) {
+  this.upassword = upassword;
  }
 
- public void setU_address(String u_address) {
-  this.u_address = u_address;
+ public String getUaddress() {
+  return uaddress;
  }
 
- public String getU_phone() {
-  return u_phone;
+ public void setUaddress(String uaddress) {
+  this.uaddress = uaddress;
  }
 
- public void setU_phone(String u_phone) {
-  this.u_phone = u_phone;
+ public String getUphone() {
+  return uphone;
  }
 
- @Override
- public String toString() {
-  return "User{" +
-   "u_id=" + u_id +
-   ", u_name='" + u_name + '\'' +
-   ", u_realname='" + u_realname + '\'' +
-   ", u_password='" + u_password + '\'' +
-   ", u_address='" + u_address + '\'' +
-   ", u_phone='" + u_phone + '\'' +
-   '}';
+ public void setUphone(String uphone) {
+  this.uphone = uphone;
  }
 }

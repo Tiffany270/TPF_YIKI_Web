@@ -14,7 +14,7 @@
     <!--此文件仅管理控制层：负责跳转的-->
 
     <!-- 自动扫描的包 -->
-    <context:component-scan base-package="com.tpf.*"/>
+    <context:component-scan base-package="com.tpf.Controller"/>
     <!-- 可以使用注解是注入 -->
     <context:annotation-config/>
 

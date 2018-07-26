@@ -12,5 +12,9 @@
   </head>
   <body>
   <a href="quer">查询</a>
+
+
+  <a href="admin">管理员</a>
+  <a href="signup.html">注册</a>
   </body>
 </html>
