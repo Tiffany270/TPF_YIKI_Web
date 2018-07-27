@@ -15,6 +15,15 @@
         select * from user where uid=#{id}
     </select>
 
+    <select id="getUserByNameAndPassword" resultType="com.tpf.Entity.User">
+        select * from user where uname=#{uname} and upassword=#{upassword}
+
+    </select>
+
+    <select id="getUserByName" resultType="com.tpf.Entity.User">
+                select * from user where uname=#{uname}
+    </select>
+
 
 </mapper>
 

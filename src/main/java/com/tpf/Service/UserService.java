@@ -20,10 +20,26 @@ public class UserService {
   return mapper.getUserById(id);
 
  }
+ public User getUserByName(String name){
+
+  return mapper.getUserByName(name);
+
+ }
+
+
 
  public List<User> getAll(){
 
   return mapper.getAll();
+ }
+ public boolean getUserByNameAndPassword(String name,String psw){
+
+  User user = mapper.getUserByNameAndPassword(name,psw);
+  if(user!=null){
+   return true;
+  }
+
+  return false;
  }
 
 }

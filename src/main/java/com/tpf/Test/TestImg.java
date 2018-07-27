@@ -1,5 +1,6 @@
 package com.tpf.Test;
 
+import com.tpf.Service.ImgsService;
 import com.tpf.Service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -7,16 +8,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 
-public class Tests {
+public class TestImg {
 
- UserService service;
+ ImgsService service;
 
  @Test
  public void test() throws IOException {
   ApplicationContext cxt = new ClassPathXmlApplicationContext("spring.xml");
-  service = (UserService) cxt.getBean("userService");
+  service = (ImgsService) cxt.getBean("imgsService");
 
-  System.out.println(service.getUserByNameAndPassword("yiki","1234"));
+  System.out.println(service.getAll());
 
  }
 }

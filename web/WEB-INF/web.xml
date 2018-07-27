@@ -32,6 +32,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+
     <!-- 配置过滤器 作用是把Post请求转换为delete和put -->
     <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>
