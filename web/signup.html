@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Registration Form Template</title>
+    <title>signup!</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -52,35 +52,31 @@
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="" method="post" class="registration-form">
+                        <form role="form" action="signup" method="post" class="registration-form">
                             <div class="form-group">
                                 <label class="sr-only" for="form-first-name">Your name</label>
-                                <input type="text" name="form-first-name" placeholder="First name..."
+                                <input type="text" name="uname" placeholder="First name..."
                                        class="form-first-name form-control" id="form-first-name">
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="form-real-name">Last name</label>
-                                <input type="text" name="form-last-name" placeholder="Last name..."
+                                <label class="sr-only" for="form-real-name">real name</label>
+                                <input type="text" name="urealname" placeholder="Real name..."
                                        class="form-last-name form-control" id="form-real-name">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Password</label>
-                                <input type="text" name="form-email" placeholder="Email..."
+                                <input type="text" name="upassword" placeholder="Password..."
                                        class="form-email form-control" id="form-password">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-Phone">Phone</label>
-                                <input type="text" name="form-email" placeholder="Phone..."
+                                <input type="text" name="uphone" placeholder="Phone..."
                                        class="form-email form-control" id="form-Phone">
                             </div>
-                            <div class="form-group">
-                                <label class="sr-only" for="form-email">Email</label>
-                                <input type="text" name="form-email" placeholder="Email..."
-                                       class="form-email form-control" id="form-email">
-                            </div>
+
                             <div class="form-group">
                                 <label class="sr-only" for="form-address">Address</label>
-                                <input type="text" name="form-email" placeholder="Address..."
+                                <input type="text" name="uaddress" placeholder="Address..."
                                        class="form-email form-control" id="form-address">
                             </div>
                             <button type="submit" class="btn">Give it to me!</button>
@@ -104,6 +100,24 @@
 <!--[if lt IE 10]>
 <script src="js/placeholder.js"></script>
 <![endif]-->
+
+<script type="text/javascript">
+
+    function confirmEmail(){
+        var email = document.getElementById('form-email').value;
+        var reg = new RegExp(
+            "^[0-9A-Za-z][\\.-_0-9A-Za-z]*@[0-9A-Za-z]+(?:\\.[0-9A-Za-z]+)+$");
+        var result= reg.test(email);
+        if(!result){
+            alert("邮箱格式错误！");
+
+        }
+    }
+
+</script>
+
+
+
 
 </body>
 

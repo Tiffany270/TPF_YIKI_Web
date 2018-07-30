@@ -1,0 +1,195 @@
+
+body {
+    background-color: #EED2EE;
+}
+
+#header {
+    width: 100%;
+    margin: 0;
+    height: 100px;
+    background-color: red;
+    min-width: 1000px;
+}
+
+#left {
+    height: 800px;
+    background-color: #EDEDED;
+
+}
+
+#right {
+    height: 800px;
+    background-color: #CDB7B5;
+
+}
+
+#left > ul > li {
+    display: block;
+    font-size: 20px;
+}
+
+#left > div {
+    display: block;
+    height: 50px;
+    width: 100%;
+
+}
+
+#left > .daohang:hover {
+    background-color: #E3E3E3;
+    width: 100%;
+}
+
+#left > div > a {
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: black;
+}
+
+#left > div > span > a {
+    text-align: center;
+    line-height: 50px;
+    margin-left: 20px;
+    color: black;
+}
+
+#left > .lxwm {
+    margin-top: 50px;
+    height: 100px;
+
+}
+
+#left > .lxwm p {
+    text-align: center;
+    height: 30px;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#left > .lxwm ul {
+    padding: 0;
+}
+
+#left > .lxwm li {
+    width: 50%;
+    text-align: center;
+    line-height: 30px;
+    display: block;
+    float: left;
+    margin: 0;
+}
+
+#left > .lxwm li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#left > .lxwm li a:hover {
+    color: #FF5777;
+}
+
+#hide {
+    background-color: #E3E3E3;
+    width: 800px;
+    height: 380px;
+    position: relative;
+    top: -800px;
+    left: 433px;
+    display: none;
+}
+
+/** 左部导航结束*/
+/** 图片轮播开始 */
+#d {
+    width: 850px;
+    height: 380px;
+}
+
+#img {
+    width: 850px;
+    height: 330px;
+}
+
+#labels {
+    width: 850px;
+    height: 50px;
+    background-color: #121112;
+}
+
+#labels span {
+    display: block;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #c8c8c8;
+    float: left;
+    cursor: pointer;
+}
+
+#labels span:hover {
+    color: #e9c06c;
+    background-color: #303030;
+}
+
+#labels span.spanActive {
+    color: #e9c06c;
+    background-color: #303030;
+}
+
+#img img {
+    display: none;
+}
+
+#img img:first-child {
+    display: block;
+}
+
+/*轮播结束*/
+/*衣服展示开始*/
+#cloth {
+    background-color: white;
+    width: 850px;
+    height: 400px;
+    padding: 0;
+}
+
+#cloth ul {
+    padding: 0;
+}
+
+#cloth li {
+    height: 400px;
+    width: 270px;
+
+    list-style-type: none;
+    float: left;
+    margin: auto;
+}
+
+#cloth li:nth-child(2) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#cloth li > .up {
+    height: 330px;
+    width: 270px;
+
+}
+
+#cloth li > .down {
+    height: 70px;
+    width: 270px;
+
+}
+
+#cloth img {
+    width: 100%;
+    height: 100%;
+}

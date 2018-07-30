@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tpf.Dao.OrderlistMapper">
+  <resultMap id="BaseResultMap" type="com.tpf.Entity.Orderlist">
+    <id column="oid" jdbcType="INTEGER" property="oid" />
+    <result column="oname" jdbcType="VARCHAR" property="oname" />
+    <result column="oprice" jdbcType="VARCHAR" property="oprice" />
+    <result column="onumber" jdbcType="VARCHAR" property="onumber" />
+    <result column="osize" jdbcType="VARCHAR" property="osize" />
+    <result column="oaddress" jdbcType="VARCHAR" property="oaddress" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    oid, oname, oprice, onumber, osize, oaddress
+  </sql>
+  <select id="selectByExample" parameterType="com.tpf.Entity.OrderlistExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from orderlist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orderlist
+    where oid = #{oid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orderlist
+    where oid = #{oid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tpf.Entity.OrderlistExample">
+    delete from orderlist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tpf.Entity.Orderlist">
+    insert into orderlist (oid, oname, oprice, 
+      onumber, osize, oaddress
+      )
+    values (#{oid,jdbcType=INTEGER}, #{oname,jdbcType=VARCHAR}, #{oprice,jdbcType=VARCHAR}, 
+      #{onumber,jdbcType=VARCHAR}, #{osize,jdbcType=VARCHAR}, #{oaddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tpf.Entity.Orderlist">
+    insert into orderlist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="oname != null">
+        oname,
+      </if>
+      <if test="oprice != null">
+        oprice,
+      </if>
+      <if test="onumber != null">
+        onumber,
+      </if>
+      <if test="osize != null">
+        osize,
+      </if>
+      <if test="oaddress != null">
+        oaddress,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        #{oid,jdbcType=INTEGER},
+      </if>
+      <if test="oname != null">
+        #{oname,jdbcType=VARCHAR},
+      </if>
+      <if test="oprice != null">
+        #{oprice,jdbcType=VARCHAR},
+      </if>
+      <if test="onumber != null">
+        #{onumber,jdbcType=VARCHAR},
+      </if>
+      <if test="osize != null">
+        #{osize,jdbcType=VARCHAR},
+      </if>
+      <if test="oaddress != null">
+        #{oaddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tpf.Entity.OrderlistExample" resultType="java.lang.Long">
+    select count(*) from orderlist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update orderlist
+    <set>
+      <if test="record.oid != null">
+        oid = #{record.oid,jdbcType=INTEGER},
+      </if>
+      <if test="record.oname != null">
+        oname = #{record.oname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oprice != null">
+        oprice = #{record.oprice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.onumber != null">
+        onumber = #{record.onumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.osize != null">
+        osize = #{record.osize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oaddress != null">
+        oaddress = #{record.oaddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update orderlist
+    set oid = #{record.oid,jdbcType=INTEGER},
+      oname = #{record.oname,jdbcType=VARCHAR},
+      oprice = #{record.oprice,jdbcType=VARCHAR},
+      onumber = #{record.onumber,jdbcType=VARCHAR},
+      osize = #{record.osize,jdbcType=VARCHAR},
+      oaddress = #{record.oaddress,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tpf.Entity.Orderlist">
+    update orderlist
+    <set>
+      <if test="oname != null">
+        oname = #{oname,jdbcType=VARCHAR},
+      </if>
+      <if test="oprice != null">
+        oprice = #{oprice,jdbcType=VARCHAR},
+      </if>
+      <if test="onumber != null">
+        onumber = #{onumber,jdbcType=VARCHAR},
+      </if>
+      <if test="osize != null">
+        osize = #{osize,jdbcType=VARCHAR},
+      </if>
+      <if test="oaddress != null">
+        oaddress = #{oaddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tpf.Entity.Orderlist">
+    update orderlist
+    set oname = #{oname,jdbcType=VARCHAR},
+      oprice = #{oprice,jdbcType=VARCHAR},
+      onumber = #{onumber,jdbcType=VARCHAR},
+      osize = #{osize,jdbcType=VARCHAR},
+      oaddress = #{oaddress,jdbcType=VARCHAR}
+    where oid = #{oid,jdbcType=INTEGER}
+  </update>
+</mapper>

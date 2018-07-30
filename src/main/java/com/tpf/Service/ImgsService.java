@@ -1,9 +1,7 @@
 package com.tpf.Service;
 
 import com.tpf.Dao.ImgMapper;
-import com.tpf.Dao.UserMapper;
 import com.tpf.Entity.Imgs;
-import com.tpf.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -182,18 +182,18 @@
                                 <%--查询开始--%>
                                 <tbody>
 
-                                <c:forEach items="${alluser}" var="pers">
+                                <c:forEach items="${pageinfo.list}" var="users">
 
                                 <tr>
-                                    <td> ${pers.uid}&nbsp;&nbsp;${pers.uname}
-                                        <span class="label label-info">${pers.urealname}</span><br/>
-                                        <span class="meta">${pers.upassword}</span>
+                                    <td> ${users.uid}&nbsp;&nbsp;${users.uname}
+                                        <span class="label label-info">${users.urealname}</span><br/>
+                                        <span class="meta">${users.upassword}</span>
                                     </td>
                                     <td class="value">
-                                            ${pers.uaddress}
+                                            ${users.uaddress}
                                     </td>
                                     <td class="value">
-                                           ${pers.uphone}
+                                           ${users.uphone}
                                     </td>
                                     <td class="actions">
                                         <a class="btn btn-small btn-primary" href="vieworder.html">View Order</a>
@@ -213,15 +213,34 @@
                     <div class="span5">
 
                         <div class="pagination pull-left">
+                            <div>
+                                当前${pageinfo.pageNum}页,
+                                共${pageinfo.pages}页,
+                                共${pageinfo.total}条记录
+                            </div>
                             <ul>
-                                <li><a href="#">Prev</a></li>
-                                <li class="active">
-                                    <a href="#">1</a>
-                                </li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">Next</a></li>
+                                <li><a href="admin?pn=${pageinfo.firstPage}">首页</a></li>
+                                <c:if test="${pageinfo.hasPreviousPage}">
+                                    <li><a href="admin?pn=${pageinfo.pageNum-1}">Prev</a></li>
+                                </c:if>
+
+                                <c:forEach items="${pageinfo.navigatepageNums}"
+                                var="pagenum">
+                                    <c:if test="${pagenum==pageinfo.pageNum}">
+                                        <li class="active">
+                                            <a href="#">${pagenum}</a>
+                                        </li>         
+                                    </c:if>
+                               <c:if test="${pagenum!=pageinfo.pageNum}">
+                                   <li>
+                                       <a href="admin?pn=${pagenum}">${pagenum}</a>
+                                   </li>
+                               </c:if>
+                                </c:forEach>
+                                <c:if test="${pageinfo.hasNextPage}">
+                                    <li><a href="admin?pn=${pageinfo.pageNum+1}">Next</a></li>
+                                </c:if>
+                                <li><a href="admin?pn=${pageinfo.lastPage}">尾页</a></li>
                             </ul>
                         </div>
 

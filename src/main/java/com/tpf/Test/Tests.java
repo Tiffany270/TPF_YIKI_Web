@@ -1,5 +1,6 @@
 package com.tpf.Test;
 
+import com.tpf.Entity.User;
 import com.tpf.Service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,5 +20,15 @@ public class Tests {
   System.out.println(service.getUserByNameAndPassword("yiki","1234"));
 
  }
-}
+
+ @Test
+ public void test01() throws IOException {
+  ApplicationContext cxt = new ClassPathXmlApplicationContext("spring.xml");
+  service = (UserService) cxt.getBean("userService");
+
+ service.addUser(new User("yiki","李","12345","测试","123456"));
+
+ }
+
+ }
 

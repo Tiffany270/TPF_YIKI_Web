@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
 
 </head>
 <body>
-
+<a href="AllUser?pn=2">查询</a>
 <div class="container">
 
     <div class="row">
@@ -277,6 +278,7 @@
 
                         <div class="pagination pull-left">
                             <ul>
+                                共${pageinfo.getPageNum()}
                                 <li><a href="#">Prev</a></li>
                                 <li class="active">
                                     <a href="#">1</a>
