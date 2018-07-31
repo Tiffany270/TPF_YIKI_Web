@@ -132,7 +132,6 @@
             <ul>
                 <li>
                     <c:if test="${sessionScope.isLogin==null}">
-
                         <a href="login.html">你好，请登录 &nbsp;&nbsp;</a>
                         <a href="signup.html" class="col-red"> 免费注册</a>
                     </c:if>
