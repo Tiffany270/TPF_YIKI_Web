@@ -53,4 +53,8 @@ public class UserService {
   mapper.insertSelective(user);
  }
 
+ public void deleteUserById(Integer id){
+   mapper.deleteByPrimaryKey(id);
+ }
+
 }

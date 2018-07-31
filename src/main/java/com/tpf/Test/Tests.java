@@ -26,7 +26,7 @@ public class Tests {
   ApplicationContext cxt = new ClassPathXmlApplicationContext("spring.xml");
   service = (UserService) cxt.getBean("userService");
 
- service.addUser(new User("yiki","李","12345","测试","123456"));
+ service.deleteUserById(22);
 
  }
 

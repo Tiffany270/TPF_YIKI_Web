@@ -131,7 +131,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     background-color: pink;
     float: left;
     padding-top: 25px;
-    background: url(../images/logo.png) no-repeat 0 25px;
+    background: url(../img/logo.png) no-repeat 0 25px;
     position: relative;
 }
 .db11{
@@ -150,7 +150,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     text-indent: -2000em;
 }
 .search{
-    width: 538px;
+    width: 570px;
     height: 35px;
     float: left;
     padding-top: 25px;
@@ -293,7 +293,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 .bike{
     height: 44px;
     width: 140px;
-    background:url(../images/bike.jpg)no-repeat;
+    background:url(../img/bike.jpg)no-repeat;
     float: right;
 }
 .bike a{

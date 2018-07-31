@@ -32,5 +32,14 @@ public class GoodService {
   return mapper.selectByExample(goodExample);
 
  }
+ public List<Good> getGoods(){
 
-}
+  return mapper.selectByExample(null);
+ }
+
+ public Good getGoodsById(Integer id){
+
+  return mapper.selectByPrimaryKey(id);
+ }
+
+ }

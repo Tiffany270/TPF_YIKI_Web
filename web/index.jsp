@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,6 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <style type="text/css">
         body {
-            background-color: #EED2EE;
         }
 
         #big {
@@ -274,6 +274,11 @@
                 <i><s>◇</s></i>
             </div>
         </div>
+        <div class="fl">
+            <div>
+                <a href="JumToAdmin">管理员入口</a>
+            </div>
+        </div>
         <div class="fr">
             <ul>
                 <li>
@@ -364,16 +369,16 @@
         <div class="row">
             <div class="col-md-3" id="left">
                 <div class="daohang">
-                    <a href="#">男装</a>
-                    <span><a href="#">T恤</a></span>
-                    <span><a href="#">夹克</a></span>
-                    <span><a href="#">风衣</a></span>
+                    <a target="_blank" href="JumpToGood?type=man">男装</a>
+                    <span><a target="_blank" href="JumpToGood?type=manT">T恤</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=manJ">夹克</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=manF">风衣</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">女装</a>
-                    <span><a href="#">短裙</a></span>
-                    <span><a href="#">连衣裙</a></span>
-                    <span><a href="#">风衣</a></span>
+                    <a target="_blank" href="JumpToGood?type=women">女装</a>
+                    <span><a target="_blank" href="JumpToGood?type=womenS">短裙</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenQ">连衣裙</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=women">风衣</a></span>
                 </div>
                 <div class="daohang">
                     <a href="#">冬装</a>

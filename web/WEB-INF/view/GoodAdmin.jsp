@@ -38,20 +38,19 @@
                 <ul class="side-nav">
 
                     <li>
-                        <a href="#"><i class="icon-home"></i>返回主页</a>
+                        <a href="back"><i class="icon-home"></i>返回主页</a>
                     </li>
-                    <li class="dropdown active">
-                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#website-dropdown"
-                           href="#"><i
-                                class="icon-sitemap"></i>用户管理<b class="caret"></b></a>
-                        <ul id="website-dropdown" class="collapse">
-                            <li><a href="listing.html">新增用户</a></li>
-                            <li><a href="listing.html">功能占位</a></li>
-                        </ul>
+                    <li>
+                        <a href="JumToAdmin">
+                            <i class="icon-sitemap"></i>用户管理<b class="caret"></b></a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#">
-                            <i class="icon-shopping-cart"></i> 商品管理 <b class="caret"></b></a>
+                        <a class="dropdown-toggle"
+                           data-toggle="collapse"
+                           data-target="#store-dropdown"
+                           href="JumToGoodManager">
+                            <i class="icon-shopping-cart"></i>
+                            商品管理 <b class="caret"></b></a>
                         <ul id="store-dropdown">
                             <li><a href="#">订单</a></li>
                             <li><a href="#">占位占位</a></li>
@@ -59,8 +58,8 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#"><i
-                                class="icon-signal"></i> Reports <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#">
+                            <i class="icon-signal"></i> Reports <b class="caret"></b></a>
                         <ul id="reports-dropdown" class="collapse">
                             <li><a href="report.html">Sales Reports</a></li>
                             <li><a href="report.html">Product Popularity</a></li>
@@ -166,95 +165,45 @@
                                 <h2>用户管理</h2>
                             </div>
 
-                            <table class="orders-table table">
+                            <table class="orders-table table" id="user_table">
                                 <thead>
                                 <tr>
-                                    <th>用户</th>
-                                    <th class="value">地址</th>
-                                    <th class="actions">电话</th>
+                                    <th class="value">ID</th>
+                                    <th class="value">商品名</th>
+                                    <th class="value">类型</th>
+                                    <th class="value">价格</th>
+                                    <th class="value">库存</th>
+                                    <th class="actions">图片路径</th>
                                     <th class="actions">Actions</th>
                                 </tr>
                                 </thead>
 
 
-
-
-                                <%--查询开始--%>
+                                <%--==================查询开始================================--%>
                                 <tbody>
 
-                                <c:forEach items="${pageinfo.list}" var="users">
-
-                                <tr>
-                                    <td> ${users.uid}&nbsp;&nbsp;${users.uname}
-                                        <span class="label label-info">${users.urealname}</span><br/>
-                                        <span class="meta">${users.upassword}</span>
-                                    </td>
-                                    <td class="value">
-                                            ${users.uaddress}
-                                    </td>
-                                    <td class="value">
-                                           ${users.uphone}
-                                    </td>
-                                    <td class="actions">
-                                        <a class="btn btn-small btn-primary" href="vieworder.html">View Order</a>
-                                    </td>
-                                </tr>
-
-
-                                </c:forEach>
-
                                 </tbody>
+                                <%--==================查询结束================================--%>
+
                             </table>
 
                         </div>
 
                     </div>
 
-                    <div class="span5">
-
-                        <div class="pagination pull-left">
-                            <div>
-                                当前${pageinfo.pageNum}页,
-                                共${pageinfo.pages}页,
-                                共${pageinfo.total}条记录
-                            </div>
-                            <ul>
-                                <li><a href="admin?pn=${pageinfo.firstPage}">首页</a></li>
-                                <c:if test="${pageinfo.hasPreviousPage}">
-                                    <li><a href="admin?pn=${pageinfo.pageNum-1}">Prev</a></li>
-                                </c:if>
-
-                                <c:forEach items="${pageinfo.navigatepageNums}"
-                                var="pagenum">
-                                    <c:if test="${pagenum==pageinfo.pageNum}">
-                                        <li class="active">
-                                            <a href="#">${pagenum}</a>
-                                        </li>         
-                                    </c:if>
-                               <c:if test="${pagenum!=pageinfo.pageNum}">
-                                   <li>
-                                       <a href="admin?pn=${pagenum}">${pagenum}</a>
-                                   </li>
-                               </c:if>
-                                </c:forEach>
-                                <c:if test="${pageinfo.hasNextPage}">
-                                    <li><a href="admin?pn=${pageinfo.pageNum+1}">Next</a></li>
-                                </c:if>
-                                <li><a href="admin?pn=${pageinfo.lastPage}">尾页</a></li>
-                            </ul>
-                        </div>
-
+                    <div class="span7">
+                    <%--===分页条开始==================--%>
+                    <div class="pagination pull-left">
+                        <div id="pageinfo"></div>
                     </div>
 
-                    <div class="span5 listing-buttons pull-right">
+                    <div class="pagination pull-right">
+                        <ul id="page_nav">
 
-                        <button class="btn btn-info">Action</button>
-
-                        <button class="btn btn-success">Action</button>
-
-                        <button class="btn btn-primary">Add New Item</button>
-
+                        </ul>
                     </div>
+                        <%--===分页条结束==================--%>
+                </div>
 
                 </div>
 
@@ -262,7 +211,7 @@
 
                     <div class="span10 footer">
 
-                        <p>&copy; Website Name 2014</p>
+                        <p>&copy; Website Yiki 2018/08/05</p>
 
                     </div>
 
@@ -283,7 +232,151 @@
 <script src="../../js/bootstrap.js"></script>
 
 
+<script type="text/javascript">
 
+    $(function () {
+        to_page(1);
+
+    });
+
+
+    function to_page(pn) {
+        $.ajax({
+            url: "GoodsManage",
+            data: "pn=" + pn,
+            type: "get",
+            success: function (result) {
+                console.log(result);
+                build_table(result);
+                build_pageinfo(result);
+                build_page_nave(result);
+            }
+        });
+    }
+
+    function build_table(result) {
+
+
+        //构建之前都要清空
+        $("#user_table tbody").empty();
+
+        var goods = result.data.pageInfo.list;
+        $.each(goods, function (index, item) {
+            var gid = $("<td></td>").append(item.gid);
+            var gname = $("<td></td>").addClass("value").append(item.gname);
+            var gprice = $("<td></td>").addClass("value").append(item.gprice);
+            var gnumber = $("<td></td>").addClass("value").append(item.gnumber);
+            var gtype = $("<td></td>").addClass("value").append(item.gtype);
+            var gpic = $("<td></td>").addClass("value").append(item.gpicture);
+            var href = $("<a></a>").attr("href", "#").addClass("btn btn-small btn-primary").append("Action");
+            var action = $("<td></td>").addClass("actions").append(href);
+            $("<tr></tr>").append(gid)
+                .append(gname)
+                .append(gtype)
+                .append(gprice)
+                .append(gnumber)
+                .append(gpic)
+                .append(action)
+                .appendTo("#user_table tbody");
+
+        });
+    }
+
+    function build_pageinfo(result) {
+        //  当前pageinfo.pageNum}页,
+        //共pageinfo.pages}页,
+        //共pageinfo.total}条记录
+        $("#pageinfo").empty();
+
+        $("#pageinfo")
+            .append("当前第" + result.data.pageInfo.pageNum + "页，" +
+                "共" + result.data.pageInfo.pages + " 页，" +
+                "共" + result.data.pageInfo.total + "条记录")
+    }
+
+    function build_page_nave(result) {
+        $("#page_nav").empty();
+
+        var firstPage = $("<li></li>")
+            .append($("<a></a>")
+                .append("首页")
+                .attr("href", "#"));
+
+        var lastPage = $("<li></li>")
+            .append($("<a></a>")
+                .append("尾页")
+                .attr("href", "#"));
+
+
+        var prePage = $("<li></li>")
+            .append($("<a></a>")
+                .append("Prev")
+                .attr("href", "#"));
+        var nextPage = $("<li></li>")
+            .append($("<a></a>")
+                .append("Next")
+                .attr("href", "#"));
+
+        if (result.data.pageInfo.hasPreviousPage == false) {
+            firstPage.addClass("disabled");
+            prePage.addClass("disabled");
+        }
+        else {
+
+            //首页的点击事件
+            firstPage.click(function () {
+                to_page(1);
+            });
+
+            //Prev的点击事件
+            prePage.click(function () {
+                to_page(result.data.pageInfo.pageNum - 1);
+            });
+        }
+
+        if (result.data.pageInfo.hasNextPage == false) {
+            lastPage.addClass("disabled");
+            nextPage.addClass("disabled");
+        }
+        else {
+            //Next的点击事件
+            nextPage.click(function () {
+                to_page(result.data.pageInfo.pageNum + 1);
+            });
+
+            //尾页的点击事件
+            lastPage.click(function () {
+                to_page(result.data.pageInfo.pages);
+            });
+        }
+
+
+        $("#page_nav")
+            .append(firstPage)
+            .append(prePage);
+        $.each(result.data.pageInfo.navigatepageNums, function (index, item) {
+
+            var numli = $("<li></li>")
+                .append($("<a></a>")
+                    .append(item)
+                    .attr("href", "#"));
+            if (result.data.pageInfo.pageNum == item) {
+                numli.addClass("active");
+            }
+
+            //数字翻页的点击事件
+            numli.click(function () {
+                to_page(item);
+            });
+
+            $("#page_nav").append(numli);
+        });
+        $("#page_nav").append(nextPage)
+            .append(lastPage);
+    }
+
+
+</script>
 
 
 </body>

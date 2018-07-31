@@ -55,4 +55,9 @@ public class AdminController {
   return "admin";
  }
 
+ @RequestMapping("**/JumToGoodManager")
+ public String JumToGoodManager(){
+  return "GoodAdmin";
+ }
+
 }
