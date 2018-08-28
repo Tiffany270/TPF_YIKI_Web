@@ -65,24 +65,48 @@ public class GoodController {
   if (type.equals("man")) {
    session.setAttribute("type", "男");
   }
-  if (type.equals("manT")) {
+  else if (type.equals("manT")) {
    session.setAttribute("type", "男T");
   }
-  if (type.equals("manJ")) {
+  else if (type.equals("manJ")) {
    session.setAttribute("type", "男夹克");
   }
-  if (type.equals("manF")) {
+  else if (type.equals("manF")) {
    session.setAttribute("type", "男风衣");
   }
-  if (type.equals("women")) {
-   session.setAttribute("type", "裙");
+  else if (type.equals("women")) {
+   session.setAttribute("type", "女裙");
   }
 
-  if (type.equals("womenS")) {
+  else if (type.equals("womenS")) {
    session.setAttribute("type", "短裙");
   }
-  if (type.equals("womenQ")) {
+  else if (type.equals("womenF")) {
+   session.setAttribute("type", "女风衣");
+  }
+  else if (type.equals("womenQ")) {
    session.setAttribute("type", "连衣裙");
+  }
+  else if (type.equals("winter")) {
+   session.setAttribute("type", "风衣");
+  }
+  else if (type.equals("maoyi")) {
+   session.setAttribute("type", "毛衣");
+  }
+  else if (type.equals("pants")) {
+   session.setAttribute("type", "裤");
+  }
+  else if (type.equals("kuopants")) {
+   session.setAttribute("type", "阔腿裤");
+  }
+  else if (type.equals("shoe")) {
+   session.setAttribute("type", "鞋");
+  }
+  else if (type.equals("shoeY")) {
+   session.setAttribute("type", "运动鞋");
+  }
+  else if (type.equals("shoeL")) {
+   session.setAttribute("type", "凉鞋");
   }
   return "forward:/GoodType.jsp";
 

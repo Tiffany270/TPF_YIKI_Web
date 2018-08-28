@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>主页</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <style type="text/css">
@@ -298,11 +298,12 @@
                     <a href="loginOut">退出</a>
                 </li>
                 <li class="line"></li>
-
-                <li>我的订单</li>
+                <li>
+                    <a href="JumpToOrder">
+                        我的订单</a></li>
                 <li class="line"></li>
-                <li class="fore">我的京东
-                    <i><s>◇</s></i>
+                <li class="fore">
+                    <a href="JumpToCart">购物车</a>
                 </li>
                 <li class="line"></li>
                 <li>京东会员</li>
@@ -332,7 +333,7 @@
 <div class="topbanner">
     <div class="w tp">
         <img src="img/topbanner.jpg">
-        <a href="javascript:;" class="close-banner"></a>
+        <a href="javascript:" class="close-banner"></a>
     </div>
 </div>
 
@@ -347,22 +348,7 @@
         <input type="text" value="图书开抢">
         <button>搜索</button>
     </div>
-    <!--     <div class="car"> -->
-    <!--         <a href="#"> 我的购物车</a> -->
-    <!--         <span class="icon1"></span> -->
-    <!--         <span class="icon2">></span> -->
-    <!--         <span class="icon3">7</span> -->
-    <!--     </div> -->
-    <!--     <div class="hotwords"> -->
-    <!--         <a href="#" class="col-red">配件暑期促</a> -->
-    <!--         <a href="#"> 每150-50</a> -->
-    <!--         <a href="#"> 游戏手机</a> -->
-    <!--         <a href="#"> 游戏本</a> -->
-    <!--         <a href="#"> 美妆护肤</a> -->
-    <!--         <a href="#">199减100</a> -->
-    <!--         <a href="#">世界杯</a> -->
-    <!--         <a href="#"> 笔记本</a> -->
-    <!--     </div> -->
+
 </div>
 <div id="big">
     <div class="container">
@@ -378,43 +364,43 @@
                     <a target="_blank" href="JumpToGood?type=women">女装</a>
                     <span><a target="_blank" href="JumpToGood?type=womenS">短裙</a></span>
                     <span><a target="_blank" href="JumpToGood?type=womenQ">连衣裙</a></span>
-                    <span><a target="_blank" href="JumpToGood?type=women">风衣</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenF">风衣</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">冬装</a>
-                    <span><a href="#">短款棉袄</a></span>
-                    <span><a href="#">毛衣</a></span>
-                    <span><a href="#">毛呢外套</a></span>
+                    <a target="_blank" href="JumpToGood?type=winter">冬装</a>
+                    <span><a target="_blank" href="JumpToGood?type=womenF">短款棉袄</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=maoyi">毛衣</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenF">毛呢外套</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">夏装</a>
-                    <span><a href="#">短裤</a></span>
-                    <span><a href="#">短袖</a></span>
-                    <span><a href="#">高腰裙</a></span>
+                    <a target="_blank" href="JumpToGood?type=womenS">夏装</a>
+                    <span> <a target="_blank" href="JumpToGood?type=pants">短裤</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=manT">短袖</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenS">高腰裙</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">上衣</a>
-                    <span><a href="#">T恤</a></span>
-                    <span><a href="#">夹克</a></span>
-                    <span><a href="#">风衣</a></span>
+                    <a target="_blank" href="JumpToGood?type=manT">上衣</a>
+                    <span><a target="_blank" href="JumpToGood?type=manT">T恤</a></span>
+                    <span><a href="#"><a target="_blank" href="JumpToGood?type=womenF">夹克</a></span>
+                    <span><a href="#"><a target="_blank" href="JumpToGood?type=womenF">风衣</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">裙子</a>
-                    <span><a href="#">牛仔裙</a></span>
-                    <span><a href="#">长裙</a></span>
-                    <span><a href="#">短裙</a></span>
+                    <a target="_blank" href="JumpToGood?type=women">裙子</a>
+                    <span><a target="_blank" href="JumpToGood?type=womenS">牛仔裙</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenS">长裙</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=womenS">短裙</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">裤子</a>
-                    <span><a href="#">阔腿裤</a></span>
-                    <span><a href="#">牛仔裤</a></span>
-                    <span><a href="#">初恋裤</a></span>
+                    <a target="_blank" href="JumpToGood?type=pants">裤子</a>
+                    <span> <a target="_blank" href="JumpToGood?type=kuopants">阔腿裤</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=kuopants">牛仔裤</a></span>
+                    <span><a target="_blank" href="JumpToGood?type=kuopants">初恋裤</a></span>
                 </div>
                 <div class="daohang">
-                    <a href="#">鞋子</a>
-                    <span><a href="#">皮鞋</a></span>
-                    <span><a href="#">运动鞋</a></span>
-                    <span><a href="#">凉鞋</a></span>
+                    <a target="_blank" href="JumpToGood?type=shoe">鞋子</a>
+                    <span> <a target="_blank" href="JumpToGood?type=shoe">皮鞋</a></span>
+                    <span> <a target="_blank" href="JumpToGood?type=shoeY">运动鞋</a></span>
+                    <span> <a target="_blank" href="JumpToGood?type=shoeL">凉鞋</a></span>
                 </div>
                 <div class="lxwm">
                     <div>
@@ -475,16 +461,25 @@
                 <div id="cloth">
                     <ul>
                         <li>
-                            <div class="up"><img alt="" src="img/nv8.jpg"></div>
+                            <div class="up">
+                                <a href="JumpToDetail?id=22"> <img alt="" src="img/nv8.jpg"></a>
+                            </div>
                             <div class="down"><p>RANDOMEVENT(RDET)18SS PATCHES T-SHIRT 3色拼接LOGO标签短袖T恤 <br>￥233.10</p>
                             </div>
                         </li>
                         <li>
-                            <div class="up"><img alt="" src="img/nan6.jpg"></div>
+                            <div class="up">
+                                <a href="JumpToDetail?id=32">
+                                    <img alt="" src="img/nan6.jpg">
+                                </a>
+                            </div>
                             <div class="down"><p>RANDOMEVENT(RDET)18SS PRINT T-SHIRT MTW BOX印花短袖T恤 <br>￥233.10</p></div>
                         </li>
                         <li>
-                            <div class="up"><img alt="" src="img/nvy4.jpg"></div>
+                            <div class="up">
+                                <a href="JumpToDetail?id=44">
+                                    <img alt="" src="img/nvy4.jpg">
+                                </a></div>
                             <div class="down"><p>初恋裙气质雪纺裙子V领显瘦小清新复古碎花蓝色连衣裙收腰中长款 <br>￥666.10</p></div>
                         </li>
                     </ul>

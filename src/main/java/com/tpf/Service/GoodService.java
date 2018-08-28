@@ -42,4 +42,19 @@ public class GoodService {
   return mapper.selectByPrimaryKey(id);
  }
 
+
+ public void updateNumber(Integer gid,Integer number){
+
+  Good good = mapper.selectByPrimaryKey(gid);
+  Integer oldnumber =good.getGnumber();
+  Integer newnumber = oldnumber-number;
+  GoodExample goodExample = new GoodExample();
+  GoodExample.Criteria criteria = goodExample.createCriteria();
+  good.setGnumber(newnumber);
+  criteria.andGidEqualTo(gid);
+     mapper.updateByExampleSelective(good, goodExample);
+
+ }
+
+
  }

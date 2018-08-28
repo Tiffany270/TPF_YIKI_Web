@@ -99,7 +99,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     position: absolute;
     width: 15px;
     height: 20px;
-    background: url(../images/sprite.png) no-repeat ;
+    background: url(../img/sprite.png) no-repeat ;
     left:5px;
     top: 5px;
 }
@@ -115,7 +115,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     top:5px;
     width: 19px;
     height: 19px;
-    background: url(../images/close.png) no-repeat;
+    background: url(../img/close.png) no-repeat;
 }
 .close-banner:hover{
  background-position: bottom;
@@ -190,7 +190,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     left: 20px;
     width: 16px;
     height: 13px;
-    background: url(../images/sprite.png) no-repeat -1px -59px;
+    background: url(../img/sprite.png) no-repeat -1px -59px;
 }
 .icon2{
     font: 400 13px/13px "simsun";
@@ -345,7 +345,7 @@ s,i,em{font-style:normal;text-decoration:none;}
     width: 210px;
     height: 165px;
     float: right;
-    background: url(../images/china.png) no-repeat left bottom;
+    background: url(../img/bg.png) no-repeat left bottom;
 
 }
 .coverage .dd{

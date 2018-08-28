@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>详细信息</title>
-    <link rel="stylesheet" href="/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <style type="text/css">
@@ -91,25 +91,24 @@
         }
     </style>
     <script type="text/javascript">
-        //计算赋值方法
-        function a(flag) {
-            var nowVal = $("#inputVal").val();
-            if (flag == '+') {
-                $("#inputVal").val(parseInt(nowVal) + 1);
-            } else if (flag == '-') {
 
-                $("#inputVal").val(nowVal - 1);
-
-
+        function add()//增加数量+
+        {
+            var num = parseInt(document.getElementById("number").value);
+            if(num<100)
+            {
+                document.getElementById("number").value = ++num;
+            }
+        }
+        function sub()//减少数量图标-
+        {
+            var num = parseInt(document.getElementById("number").value);
+            if(num>1)
+            {
+                document.getElementById("number").value = --num;
             }
         }
 
-        //输入框中如果没有值则将输入框中的值重置为1
-        function b(nowVal) {
-            if (nowVal.length == 0) {
-                $("#inputVal").val(1);
-            }
-        }
     </script>
 </head>
 <body>
@@ -146,11 +145,12 @@
                     <a href="loginOut">退出</a>
                 </li>
                 <li class="line"></li>
-
-                <li>我的订单</li>
+                <li>
+                    <a href="JumpToOrder">
+                        我的订单</a></li>
                 <li class="line"></li>
-                <li class="fore">我的京东
-                    <i><s>◇</s></i>
+                <li class="fore">
+                    <a href="JumpToCart">购物车</a>
                 </li>
                 <li class="line"></li>
                 <li>京东会员</li>
@@ -188,21 +188,38 @@
             <p>原价：</p><span id="oldPrice"></span>
             <p>现价：</p><span id="newPrice"></span>
         </div>
+
         <div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="input-group offset1">
+
+                        <form action="addToCart" method="post">
+
      <span class="input-group-btn">
-       <button class="btn btn-default" type="button" onclick="a('-');">-</button>
+       <button
+               class="btn btn-default" type="button" onclick="sub();" >-</button>
      </span>
-                        <input type="text" class="form-control" placeholder="购买数量" id="inputVal" onblur="b(this.value);"
-                               onkeyup="this.value=this.value.replace(/\D/gi,'')">
-                        <span class="input-group-btn">
-       <button class="btn btn-default" type="button" onclick="a('+');">+</button>
-     </span><div>
-                        <input type="button" class="btn btn-danger btn-large" id="car" value="加入购物车">
-                    </div>
+                        <input type="text" class="form-control"
+                               id="number"
+                               name="number"
+                               value="1">
+                            <span class="input-group-btn">
+       <button
+               class="btn btn-default" type="button" onclick="add();">+</button>
+     </span>
+                        <div>
+                            <input type="submit" class="btn btn-danger btn-large" id="car" value="加入购物车">
+                        </div>
+
+
+
+
+                        </form>
+
+
+
                     </div>
 
                 </div>
@@ -232,6 +249,9 @@
 
 
     });
+
+
+
 
 
 </script>

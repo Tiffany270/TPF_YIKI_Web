@@ -13,9 +13,9 @@
 
     <!-- Le styles -->
     <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
-    <link href="../../css/bootstrap.css" rel="stylesheet">
-    <link href="../../css/font-awesome.css" rel="stylesheet">
-    <link href="../../css/admin.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/admin.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -44,19 +44,15 @@
                         <a href="JumToAdmin">
                             <i class="icon-sitemap"></i>用户管理<b class="caret"></b></a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle"
-                           data-toggle="collapse"
-                           data-target="#store-dropdown"
-                           href="JumToGoodManager">
-                            <i class="icon-shopping-cart"></i>
-                            商品管理 <b class="caret"></b></a>
-                        <ul id="store-dropdown">
-                            <li><a href="#">订单</a></li>
-                            <li><a href="#">占位占位</a></li>
-                            <li><a href="#">占位</a></li>
-                        </ul>
+                    <li>
+                        <a href="JumToOrderManager">
+                            <i class="icon-sitemap"></i>订单管理<b class="caret"></b></a>
                     </li>
+                    <li>
+                        <a href="JumToGoodManager">
+                            <i class="icon-sitemap"></i>商品管理<b class="caret"></b></a>
+                    </li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#">
                             <i class="icon-signal"></i> Reports <b class="caret"></b></a>
@@ -228,17 +224,16 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/bootstrap.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
 
 
 <script type="text/javascript">
 
     $(function () {
         to_page(1);
-
     });
-
+    var currentpage;//重新回到当前页
 
     function to_page(pn) {
         $.ajax({
@@ -267,8 +262,9 @@
             var userpassword = $("<td></td>").addClass("value").append(item.upassword);
             var useraddress = $("<td></td>").addClass("value").append(item.uaddress);
             var userphone = $("<td></td>").addClass("value").append(item.uphone);
-            var href = $("<a></a>").attr("href", "#").addClass("btn btn-small btn-primary").append("删除");
-            var action = $("<td></td>").addClass("actions").append(href);
+            var button=$("<button></button>").addClass("deletebtn btn btn-small btn-primary").append("删除");
+            button.attr("del-id",item.uid);
+            var action = $("<td></td>").addClass("actions").append(button);
             $("<tr></tr>").append(userid).append(username).append(userrealname).append(userpassword).append(useraddress)
                 .append(userphone)
                 .append(action)
@@ -278,6 +274,8 @@
     }
 
     function build_pageinfo(result) {
+
+
         //  当前pageinfo.pageNum}页,
         //共pageinfo.pages}页,
         //共pageinfo.total}条记录
@@ -286,7 +284,9 @@
         $("#pageinfo")
             .append("当前第" + result.data.pageInfo.pageNum + "页，" +
                 "共" + result.data.pageInfo.pages + " 页，" +
-                "共" + result.data.pageInfo.total + "条记录")
+                "共" + result.data.pageInfo.total + "条记录");
+        currentpage =  result.data.pageInfo.pageNum;
+
     }
 
     function build_page_nave(result) {
@@ -369,6 +369,22 @@
         $("#page_nav").append(nextPage)
             .append(lastPage);
     }
+
+    $(document).on("click",".deletebtn",function () {
+
+        var userid = $(this).attr("del-id");
+        $.ajax({
+            url:"deleteUser"+userid,
+            type:"DELETE",
+            success:function (result) {
+                alert(result.msg);
+                to_page(currentpage);
+            }
+
+        });
+
+    })
+
 
 
 </script>

@@ -4,9 +4,11 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.tpf.Entity.Respond;
 import com.tpf.Entity.User;
+import com.tpf.Service.OrderService;
 import com.tpf.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +21,8 @@ public class AdminController {
 
  @Autowired
  UserService service;
+ @Autowired
+ OrderService orderService;
 
 
  @ResponseBody
@@ -59,5 +63,22 @@ public class AdminController {
  public String JumToGoodManager(){
   return "GoodAdmin";
  }
+
+ @RequestMapping("**/JumToOrderManager")
+ public String JumToOrderManager(){
+  return "AllOrder";
+ }
+
+ @ResponseBody
+@RequestMapping(value="/SendGood")
+ public Respond SendGood( @RequestParam(value = "oid") String oid){
+  orderService.SendGood(oid);
+
+  return Respond.success();
+ }
+
+
+
+
 
 }

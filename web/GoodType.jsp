@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>衣服列表</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/base.css" />
+    <title>商品列表</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/base.css" />
     <script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <style type="text/css">
@@ -95,10 +95,12 @@
                 </li>
                 <li class="line"></li>
 
-                <li>我的订单</li>
+                <li>
+                    <a href="JumpToOrder">
+                        我的订单</a></li>
                 <li class="line"></li>
-                <li class="fore">我的京东
-                    <i><s>◇</s></i>
+                <li class="fore">
+                    <a href="JumpToCart">购物车</a>
                 </li>
                 <li class="line"></li>
                 <li>京东会员</li>

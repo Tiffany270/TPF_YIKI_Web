@@ -10,11 +10,19 @@
 <html>
 <head>
     <title>错误</title>
+    即将返回原页
 
-  错误
-    <a href="back">返回</a>
+
 
 </head>
 <body>
+
+<script type="text/javascript">
+    setInterval(function () {
+        window.history.go(-1);
+    },3000);
+
+</script>
+
 </body>
 </html>

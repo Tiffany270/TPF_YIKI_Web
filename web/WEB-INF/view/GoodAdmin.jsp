@@ -13,9 +13,9 @@
 
     <!-- Le styles -->
     <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
-    <link href="../../css/bootstrap.css" rel="stylesheet">
-    <link href="../../css/font-awesome.css" rel="stylesheet">
-    <link href="../../css/admin.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/admin.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -44,19 +44,15 @@
                         <a href="JumToAdmin">
                             <i class="icon-sitemap"></i>用户管理<b class="caret"></b></a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle"
-                           data-toggle="collapse"
-                           data-target="#store-dropdown"
-                           href="JumToGoodManager">
-                            <i class="icon-shopping-cart"></i>
-                            商品管理 <b class="caret"></b></a>
-                        <ul id="store-dropdown">
-                            <li><a href="#">订单</a></li>
-                            <li><a href="#">占位占位</a></li>
-                            <li><a href="#">占位</a></li>
-                        </ul>
+                    <li>
+                        <a href="JumToOrderManager">
+                            <i class="icon-sitemap"></i>订单管理<b class="caret"></b></a>
                     </li>
+                    <li>
+                        <a href="JumToGoodManager">
+                            <i class="icon-sitemap"></i>商品管理<b class="caret"></b></a>
+                    </li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="collapse" data-target="#reports-dropdown" href="#">
                             <i class="icon-signal"></i> Reports <b class="caret"></b></a>
@@ -228,8 +224,8 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/bootstrap.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.js"></script>
 
 
 <script type="text/javascript">
@@ -268,7 +264,7 @@
             var gnumber = $("<td></td>").addClass("value").append(item.gnumber);
             var gtype = $("<td></td>").addClass("value").append(item.gtype);
             var gpic = $("<td></td>").addClass("value").append(item.gpicture);
-            var href = $("<a></a>").attr("href", "#").addClass("btn btn-small btn-primary").append("Action");
+            var href = $("<a></a>").attr("href", "#").addClass("btn btn-small btn-primary").append("修改库存");
             var action = $("<td></td>").addClass("actions").append(href);
             $("<tr></tr>").append(gid)
                 .append(gname)

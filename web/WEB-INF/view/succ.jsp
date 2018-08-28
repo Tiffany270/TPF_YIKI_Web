@@ -9,16 +9,17 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>跳转页面</title>
-
-    <c:forEach items="${all}" var="pers">
-        ${pers.uaddress}
-        ${pers.uname}
-        ${pers.urealname}
-
-    </c:forEach>
+    <title>成功</title>
+即将返回原页
 
 </head>
+
+<script type="text/javascript">
+   setInterval(function () {
+       window.history.go(-2);
+   },3000);
+
+</script>
 <body>
 </body>
 </html>

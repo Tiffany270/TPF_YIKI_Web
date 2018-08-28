@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ThreeAndFive_Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/ThreeAndFive_Web</output-path>
+    <root id="archive" name="ThreeAndFive_Web.war">
+      <element id="artifact" artifact-name="TPF_YIKI_Web:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="servlet-api" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

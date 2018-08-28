@@ -25,6 +25,9 @@ public class MainController {
   return "redirect:/index.jsp";
  }
 
+
+
+
  @ResponseBody
  @RequestMapping("/getImg")
  public List<Imgs> getImg() {

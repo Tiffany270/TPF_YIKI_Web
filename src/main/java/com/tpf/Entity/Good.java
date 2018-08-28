@@ -94,4 +94,34 @@ public class Good {
          ", gtype='" + gtype + '\'' +
          '}';
     }
+
+
+
+    @Override
+    public int hashCode() {// 重新定义对hashmap内存储对象判断是否重复的方法
+
+        return this.getGid() + this.getGname().hashCode();// 如4+名字的哈希码32=36
+        // 哈希表的存储规则就改变了
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {// 判断是否等于自身
+            return true;
+        }
+        if (obj instanceof Good) {// 判断 Items 是否为obj类型的对象
+
+            Good i = (Good) obj;// 比较Items类中你自定义的数据域，id和name
+            if (this.getGid() == i.getGid() && this.getGname().equals(i.getGname())) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+        // 这样每当new一个item对象，如果是id和名字相同，就默认是同一个对象。
+    }
+
+
 }

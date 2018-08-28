@@ -1,0 +1,196 @@
+.max{
+	width: 993px;
+	height: 193px;
+	padding: 0;
+    margin:auto;
+	margin-top:40px;
+	
+}
+.box1{
+	height: 121px;
+	margin-top: 20px;
+	padding: 0;
+	line-height: 40px;
+	border: 1px solid #c5c5c5;
+	border-top: 2px solid #666;
+	background-color:#fff4e8;
+}
+ .box1 input{
+	margin-top: 23px;
+	margin-left: 15px;
+	position: absolute;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+.pic{
+	width:81px;
+	height: 81px;
+	left: 43px;
+	top: 17px;
+	
+}
+.crb{
+	width:204px;
+	height: 81px;
+	top: 17px;
+	left: 133px;
+	position: absolute;
+	
+	
+}
+.crb a{
+	width: 208px;
+	height: 40px;
+	display: block;
+	font-size: 12px;
+	text-decoration: none;
+	color: #333;
+}
+.crb a:hover{
+	color:#e4393c;
+	
+}
+.crb .seven a{
+	padding-top: 10px;
+	width: 114px;
+	height: 18px;
+	text-decoration: none;
+	color: #6485cb;
+	line-height: 18px;
+}
+.size{
+	width: 130px;
+	height: 40px;
+	top: 17px;
+	position: absolute;
+	left: 338px;
+		
+}
+.size .size-text{
+	width: 130px;
+	height: 20px;
+	color: #666;
+	font-size: 12px;
+	margin-left: 34px;
+}
+.price{
+	width: 190px;
+	height: 50px;
+	top: 17px;
+	left:493px;
+	position: absolute;
+	
+}
+.price>strong{
+	width: 150px;
+	height: 20px;
+	display: block;
+	margin-top: 8px;
+	text-align: right;
+	color: #666;
+}
+.num{
+	width: 46px;
+	height: 20px;
+	top: 25px;
+	left:700px;
+	display:block;
+	position: absolute;
+	text-align:center;
+	border: 1px solid #cacbcb;
+}
+.sump{
+	width: 140px;
+	height: 45px;
+	top: 17px;
+	left:762px;
+	position: absolute;
+	
+}
+.sump>strong{
+	width: 100px;
+	height: 20px;
+	text-align: right;
+	font-family: verdana;
+	color: #666;
+	display: block;
+	margin-top: 8px;
+	margin-left: 0px;
+}
+.follow{
+	width: 75px;
+	height: 60px;
+	top: 17px;
+	left:902px;
+	position: absolute;
+	
+}
+.follow .ft a{
+	width: 75px;
+	height: 20px;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333;
+	font-size: 11px;
+}
+.follow .ft a:hover{
+	color:#e4393c;
+	
+}
+.pic .crb .follow .size .sump .num .price .check .chose{
+	margin: 0;
+}
+.box2{
+	height: 50px;
+	padding: 0;
+	margin-top:40px ;
+	border: 1px solid #c5c5c5;
+}
+.box2 .check{
+	width: 56px;
+	position: absolute;
+	line-height:20px;
+	text-align:center;
+}
+
+.box2 .check input{
+	margin-top:-1px;
+}
+.box2 .chose{
+	margin-left: 640px;
+	margin-top: 2px;
+	width: 101px;
+	height: 44px;
+	position: absolute;
+	color: #333;
+	font-size: 15px;
+}
+.pt{
+	margin-left:751px;
+	margin-top: 2px;
+	width: 50px;
+	height: 20px;
+	position: absolute;
+	color: #333;
+}
+ em{
+	display: block;
+	margin-top: 2px;
+	width: 50px;
+	height: 20px;
+	position: absolute;
+	margin-left: 802px;
+	
+}
+.pay{
+	width: 96px;
+	height: 52px;
+	position: absolute;
+	margin-left: 894px;
+	text-align: center;
+    font-size: 18px;
+    line-height: 52px;
+    color: #fff;
+}
